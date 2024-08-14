@@ -56,34 +56,19 @@ if "answer_text" not in st.session_state:
 
 st.write("### :rainbow[Quiz Cardz] :books:")
 
-blank_space_0 = st.write("")
-
-with st.container(height=250):
-    header_blank1, header_title, header_blank2 = st.columns(3, gap="large")
-    with header_title:
-        st.write("#### Question:")
+with st.container(height=180):
+    # header_title = st.columns(3, gap="large")
+    # with header_title:
+    st.write("###### Question:")
     question_text = st.write(st.session_state["question_text"])
-
-blank_space_1 = st.write("")
     
-blank1, next_question, answer, blank2 = st.columns(4, gap="large")
 
-with blank1:
-    st.empty()
+st.button("Next Question", use_container_width=True, on_click=display_question)
 
-with next_question:
-    st.button("Next Question", on_click=display_question)
+st.button("Answer", use_container_width=True, on_click=display_answer)
 
-with blank2:
-    st.empty()
-
-with answer:
-    st.button("Answer", on_click=display_answer)
-
-blank_space_2 = st.write("")
-
-with st.container(height=250):
-    header_blank1, header_title, header_blank2 = st.columns(3, gap="large")
-    with header_title:
-        st.write("#### Answer:")
+with st.container(height=180):
+    # header_blank1, header_title, header_blank2 = st.columns(3, gap="large")
+    # with header_title:
+    st.write("###### Answer:")
     answer_text = st.write(st.session_state["answer_text"])
